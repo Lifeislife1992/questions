@@ -5,23 +5,22 @@
     <title>заагадки</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onload="firstQuestion()">
+<body>
 
 <header>
-    <h1>Загадки</h1>
+    <h1>Загадки 2.0</h1>
     <div class="break"></div>
 </header>
 
-<div class="question" id="question"></div>
+<div class="question" id="question">Добрый день. Вас ждет тест на изобретательность. Дайте ответ на загадки и посмотрите Свой результат.</div>
 
-<div class="answer">
+<div class="answer" id="answer-block">
     <input type="text" size="30" id="answer"/>
     <p>Ответ одним словом с большой буквы, без знаков препинания. Пример:
         Лето</p>
 </div>
-<div class="confirm">
-    <input type="button" value="Ответить" onclick="testQestions()"/>
-    <input type="button" value="Посмотреть результат" onclick="result()" />
+<div class="confirm" >
+    <input type="button" value="Начать тест" onclick="testQestions()" id="answer-button"/>
 </div>
 
 <script type="text/javascript" src="main.js"></script>
