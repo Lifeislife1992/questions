@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <title>заагадки</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="firstQuestion()">
+
+<header>
+    <h1>Загадки</h1>
+    <div class="break"></div>
+</header>
+
+<div class="question" id="question"></div>
+
+<div class="answer">
+    <input type="text" size="30" id="answer"/>
+    <p>Ответ одним словом с большой буквы, без знаков препинания. Пример:
+        Лето</p>
+</div>
+<div class="confirm">
+    <input type="button" value="Ответить" onclick="testQestions()"/>
+    <input type="button" value="Посмотреть результат" onclick="result()" />
+</div>
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
