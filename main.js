@@ -21,6 +21,18 @@ function testQestions() {
     var innerAnswer = document.getElementById("answer");
     var correctAnswer = answers[i];
 
+    //функция для правильного ответа
+    function correct(){
+        alert("Правильно!");
+        note++;
+        i++;
+    }
+    //функция для неправильного ответа
+    function incorrect(){
+        alert("К сожалению Вы ответили не правильно!");
+        i++;
+    }
+
     if (answerButton.value === "Начать тест" || answerButton.value === "Пройти тест еще раз"){
         someQuestion = questions[i];
         innerQuestion.innerHTML = someQuestion;
@@ -33,16 +45,13 @@ function testQestions() {
             alert("Введите ответ, поле пустое!");
         }
         else if (innerAnswer.value == correctAnswer) {
-            alert("Правильно!");
-            note++;
-            i++;
+            correct();
             innerAnswer.value = "";
             someQuestion = questions[i];
             innerQuestion.innerHTML = someQuestion;
         }
         else {
-            alert("К сожалению Вы ответили не правильно!");
-            i++;
+            incorrect();
             innerAnswer.value = "";
             someQuestion = questions[i];
             innerQuestion.innerHTML = someQuestion;
@@ -53,23 +62,20 @@ function testQestions() {
             alert("Введите ответ, поле пустое!");
         }
         else if (innerAnswer.value == correctAnswer) {
-            alert("Правильно!");
-            note++;
-            i++;
-            innerAnswer.style.display = "none";
+            correct();
+            document.getElementById("answer-block").style.display = "none";
             innerQuestion.innerHTML = "Загадки закончились, нажмите кнопку чтобы посмотреть результат";
             answerButton.value = "Показать результат"
 
         }
         else {
-            alert("К сожалению Вы ответили не правильно!");
-            i++;
+            incorrect();
             document.getElementById("answer-block").style.display = "none";
             innerQuestion.innerHTML = "Загадки закончились, нажмите кнопку чтобы посмотреть результат";
             answerButton.value = "Показать результат"
         }
     }
-    else if (answerButton.value === "Показать результат"){
+    else {
         innerQuestion.innerHTML = "Ваш результат: " + note + " из 4 балов!";
         answerButton.value = "Пройти тест еще раз";
         i = 0;
